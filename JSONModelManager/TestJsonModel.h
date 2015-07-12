@@ -12,7 +12,7 @@
 
 @property (strong, nonatomic) NSString *int32_value;
 @property (strong, nonatomic) NSString *string_value;
-@property (strong, nonatomic) NSArray  *rpt_int32_value;
-@property (strong, nonatomic) NSArray  *rpt_string_value;
+@property (strong, nonatomic) NSArray<Optional>  *rpt_int32_value;
+@property (strong, nonatomic) NSArray<Optional>  *rpt_string_value;
 
 @end

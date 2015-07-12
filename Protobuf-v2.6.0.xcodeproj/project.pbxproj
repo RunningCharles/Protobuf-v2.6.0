@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		56545ACD1B52B950000E5A39 /* ProtoTest.pb.cc in Sources */ = {isa = PBXBuildFile; fileRef = 56545ACB1B52B950000E5A39 /* ProtoTest.pb.cc */; };
 		569533AA1B526EA100CA2B48 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 569533A91B526EA100CA2B48 /* main.m */; };
 		569533AD1B526EA100CA2B48 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 569533AC1B526EA100CA2B48 /* AppDelegate.m */; };
-		569533B01B526EA100CA2B48 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 569533AF1B526EA100CA2B48 /* ViewController.m */; };
+		569533B01B526EA100CA2B48 /* ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 569533AF1B526EA100CA2B48 /* ViewController.mm */; };
 		569533B31B526EA100CA2B48 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 569533B11B526EA100CA2B48 /* Main.storyboard */; };
 		569533B51B526EA100CA2B48 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 569533B41B526EA100CA2B48 /* Images.xcassets */; };
 		569533B81B526EA100CA2B48 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 569533B61B526EA100CA2B48 /* LaunchScreen.xib */; };
@@ -52,9 +53,7 @@
 		5695345A1B526F1800CA2B48 /* wire_format.cc in Sources */ = {isa = PBXBuildFile; fileRef = 569534301B526F1800CA2B48 /* wire_format.cc */; };
 		5695345B1B526F1800CA2B48 /* wire_format_lite.cc in Sources */ = {isa = PBXBuildFile; fileRef = 569534321B526F1800CA2B48 /* wire_format_lite.cc */; };
 		5695345C1B526F1800CA2B48 /* protobuf_manager.cc in Sources */ = {isa = PBXBuildFile; fileRef = 569534351B526F1800CA2B48 /* protobuf_manager.cc */; };
-		569534611B52707C00CA2B48 /* test.pb.cc in Sources */ = {isa = PBXBuildFile; fileRef = 5695345E1B52707C00CA2B48 /* test.pb.cc */; };
-		569534621B52707C00CA2B48 /* test.proto in Resources */ = {isa = PBXBuildFile; fileRef = 569534601B52707C00CA2B48 /* test.proto */; };
-		569534651B5270AE00CA2B48 /* HomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 569534641B5270AE00CA2B48 /* HomeController.m */; };
+		569534621B52707C00CA2B48 /* ProtoTest.proto in Resources */ = {isa = PBXBuildFile; fileRef = 569534601B52707C00CA2B48 /* ProtoTest.proto */; };
 		569534821B52824A00CA2B48 /* JSONModel+CoreData.m in Sources */ = {isa = PBXBuildFile; fileRef = 569534691B52824A00CA2B48 /* JSONModel+CoreData.m */; };
 		569534831B52824A00CA2B48 /* JSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5695346B1B52824A00CA2B48 /* JSONModel.m */; };
 		569534841B52824A00CA2B48 /* JSONModelArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 5695346D1B52824A00CA2B48 /* JSONModelArray.m */; };
@@ -77,13 +76,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		56545ACB1B52B950000E5A39 /* ProtoTest.pb.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ProtoTest.pb.cc; sourceTree = "<group>"; };
+		56545ACC1B52B950000E5A39 /* ProtoTest.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProtoTest.pb.h; sourceTree = "<group>"; };
 		569533A41B526EA100CA2B48 /* Protobuf-v2.6.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Protobuf-v2.6.0.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		569533A81B526EA100CA2B48 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		569533A91B526EA100CA2B48 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		569533AB1B526EA100CA2B48 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		569533AC1B526EA100CA2B48 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		569533AE1B526EA100CA2B48 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		569533AF1B526EA100CA2B48 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		569533AF1B526EA100CA2B48 /* ViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ViewController.mm; sourceTree = "<group>"; };
 		569533B21B526EA100CA2B48 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		569533B41B526EA100CA2B48 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		569533B71B526EA100CA2B48 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -187,11 +188,7 @@
 		569534341B526F1800CA2B48 /* wire_format_lite_inl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wire_format_lite_inl.h; sourceTree = "<group>"; };
 		569534351B526F1800CA2B48 /* protobuf_manager.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = protobuf_manager.cc; sourceTree = "<group>"; };
 		569534361B526F1800CA2B48 /* protobuf_manager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = protobuf_manager.h; sourceTree = "<group>"; };
-		5695345E1B52707C00CA2B48 /* test.pb.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = test.pb.cc; sourceTree = "<group>"; };
-		5695345F1B52707C00CA2B48 /* test.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = test.pb.h; sourceTree = "<group>"; };
-		569534601B52707C00CA2B48 /* test.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = test.proto; sourceTree = "<group>"; };
-		569534631B5270AE00CA2B48 /* HomeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeController.h; sourceTree = "<group>"; };
-		569534641B5270AE00CA2B48 /* HomeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeController.m; sourceTree = "<group>"; };
+		569534601B52707C00CA2B48 /* ProtoTest.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ProtoTest.proto; sourceTree = "<group>"; };
 		569534681B52824A00CA2B48 /* JSONModel+CoreData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "JSONModel+CoreData.h"; sourceTree = "<group>"; };
 		569534691B52824A00CA2B48 /* JSONModel+CoreData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "JSONModel+CoreData.m"; sourceTree = "<group>"; };
 		5695346A1B52824A00CA2B48 /* JSONModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONModel.h; sourceTree = "<group>"; };
@@ -258,13 +255,11 @@
 				569533AB1B526EA100CA2B48 /* AppDelegate.h */,
 				569533AC1B526EA100CA2B48 /* AppDelegate.m */,
 				569533AE1B526EA100CA2B48 /* ViewController.h */,
-				569533AF1B526EA100CA2B48 /* ViewController.m */,
+				569533AF1B526EA100CA2B48 /* ViewController.mm */,
 				569533B11B526EA100CA2B48 /* Main.storyboard */,
 				569533B41B526EA100CA2B48 /* Images.xcassets */,
 				569533B61B526EA100CA2B48 /* LaunchScreen.xib */,
 				569533A71B526EA100CA2B48 /* Supporting Files */,
-				569534631B5270AE00CA2B48 /* HomeController.h */,
-				569534641B5270AE00CA2B48 /* HomeController.m */,
 			);
 			path = "Protobuf-v2.6.0";
 			sourceTree = "<group>";
@@ -466,9 +461,9 @@
 		5695345D1B52707C00CA2B48 /* ProtobufFile */ = {
 			isa = PBXGroup;
 			children = (
-				5695345E1B52707C00CA2B48 /* test.pb.cc */,
-				5695345F1B52707C00CA2B48 /* test.pb.h */,
-				569534601B52707C00CA2B48 /* test.proto */,
+				56545ACB1B52B950000E5A39 /* ProtoTest.pb.cc */,
+				56545ACC1B52B950000E5A39 /* ProtoTest.pb.h */,
+				569534601B52707C00CA2B48 /* ProtoTest.proto */,
 			);
 			path = ProtobufFile;
 			sourceTree = "<group>";
@@ -603,7 +598,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				569534621B52707C00CA2B48 /* test.proto in Resources */,
+				569534621B52707C00CA2B48 /* ProtoTest.proto in Resources */,
 				569533B31B526EA100CA2B48 /* Main.storyboard in Resources */,
 				569533B81B526EA100CA2B48 /* LaunchScreen.xib in Resources */,
 				569533B51B526EA100CA2B48 /* Images.xcassets in Resources */,
@@ -641,7 +636,7 @@
 				569534561B526F1800CA2B48 /* strutil.cc in Sources */,
 				569534551B526F1800CA2B48 /* structurally_valid.cc in Sources */,
 				569534871B52824A00CA2B48 /* NSArray+JSONModel.m in Sources */,
-				569533B01B526EA100CA2B48 /* ViewController.m in Sources */,
+				569533B01B526EA100CA2B48 /* ViewController.mm in Sources */,
 				569534461B526F1800CA2B48 /* strtod.cc in Sources */,
 				5695348B1B52824A00CA2B48 /* JSONKeyMapper.m in Sources */,
 				569534511B526F1800CA2B48 /* atomicops_internals_x86_msvc.cc in Sources */,
@@ -670,10 +665,9 @@
 				569534481B526F1800CA2B48 /* zero_copy_stream.cc in Sources */,
 				5695345C1B526F1800CA2B48 /* protobuf_manager.cc in Sources */,
 				569534851B52824A00CA2B48 /* JSONModelClassProperty.m in Sources */,
+				56545ACD1B52B950000E5A39 /* ProtoTest.pb.cc in Sources */,
 				569534441B526F1800CA2B48 /* coded_stream.cc in Sources */,
-				569534611B52707C00CA2B48 /* test.pb.cc in Sources */,
 				569534391B526F1800CA2B48 /* OCProtobufMaganer.mm in Sources */,
-				569534651B5270AE00CA2B48 /* HomeController.m in Sources */,
 				569534491B526F1800CA2B48 /* zero_copy_stream_impl.cc in Sources */,
 				569533AA1B526EA100CA2B48 /* main.m in Sources */,
 			);

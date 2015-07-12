@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>A7B23812-8A34-48FC-BD44-3A3F95227E62</string>
 	<key>IDESourceControlProjectName</key>
-	<string>Protobuf-v2.6.0</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>3D65F46D81B1311001AB7E4227216B08EF368F92</key>
 		<string>https://github.com/iCharlesChen/Protobuf-v2.6.0.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Protobuf-v2.6.0.xcodeproj</string>
+	<string>Protobuf-v2.6.0.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>3D65F46D81B1311001AB7E4227216B08EF368F92</key>

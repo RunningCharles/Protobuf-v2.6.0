@@ -91,8 +91,7 @@ bool ProtobufManager::SerializeToString(const string &msg_name, const MessageDat
         return false;
     }
     
-    DynamicMessageFactory dynamic_message_factory;
-    const Message *prototype_msg = dynamic_message_factory.GetPrototype(descriptor);
+    const Message *prototype_msg = dynamic_message_factory_->GetPrototype(descriptor);
     if (prototype_msg == nullptr)
     {
         return false;
@@ -154,8 +153,7 @@ bool ProtobufManager::ParseToMessageData(const string &msg_name, const string &m
         return false;
     }
     
-    DynamicMessageFactory dynamic_message_factory;
-    const Message *prototype_msg = dynamic_message_factory.GetPrototype(descriptor);
+    const Message *prototype_msg = dynamic_message_factory_->GetPrototype(descriptor);
     if (prototype_msg == nullptr)
     {
         return false;
