@@ -55,6 +55,15 @@
 		569534611B52707C00CA2B48 /* test.pb.cc in Sources */ = {isa = PBXBuildFile; fileRef = 5695345E1B52707C00CA2B48 /* test.pb.cc */; };
 		569534621B52707C00CA2B48 /* test.proto in Resources */ = {isa = PBXBuildFile; fileRef = 569534601B52707C00CA2B48 /* test.proto */; };
 		569534651B5270AE00CA2B48 /* HomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 569534641B5270AE00CA2B48 /* HomeController.m */; };
+		569534821B52824A00CA2B48 /* JSONModel+CoreData.m in Sources */ = {isa = PBXBuildFile; fileRef = 569534691B52824A00CA2B48 /* JSONModel+CoreData.m */; };
+		569534831B52824A00CA2B48 /* JSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5695346B1B52824A00CA2B48 /* JSONModel.m */; };
+		569534841B52824A00CA2B48 /* JSONModelArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 5695346D1B52824A00CA2B48 /* JSONModelArray.m */; };
+		569534851B52824A00CA2B48 /* JSONModelClassProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 5695346F1B52824A00CA2B48 /* JSONModelClassProperty.m */; };
+		569534861B52824A00CA2B48 /* JSONModelError.m in Sources */ = {isa = PBXBuildFile; fileRef = 569534711B52824A00CA2B48 /* JSONModelError.m */; };
+		569534871B52824A00CA2B48 /* NSArray+JSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 569534741B52824A00CA2B48 /* NSArray+JSONModel.m */; };
+		5695348B1B52824A00CA2B48 /* JSONKeyMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5695347F1B52824A00CA2B48 /* JSONKeyMapper.m */; };
+		5695348C1B52824A00CA2B48 /* JSONValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 569534811B52824A00CA2B48 /* JSONValueTransformer.m */; };
+		569534911B5283E900CA2B48 /* TestJsonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 569534901B5283E900CA2B48 /* TestJsonModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -183,6 +192,25 @@
 		569534601B52707C00CA2B48 /* test.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = test.proto; sourceTree = "<group>"; };
 		569534631B5270AE00CA2B48 /* HomeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeController.h; sourceTree = "<group>"; };
 		569534641B5270AE00CA2B48 /* HomeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeController.m; sourceTree = "<group>"; };
+		569534681B52824A00CA2B48 /* JSONModel+CoreData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "JSONModel+CoreData.h"; sourceTree = "<group>"; };
+		569534691B52824A00CA2B48 /* JSONModel+CoreData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "JSONModel+CoreData.m"; sourceTree = "<group>"; };
+		5695346A1B52824A00CA2B48 /* JSONModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONModel.h; sourceTree = "<group>"; };
+		5695346B1B52824A00CA2B48 /* JSONModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONModel.m; sourceTree = "<group>"; };
+		5695346C1B52824A00CA2B48 /* JSONModelArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONModelArray.h; sourceTree = "<group>"; };
+		5695346D1B52824A00CA2B48 /* JSONModelArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONModelArray.m; sourceTree = "<group>"; };
+		5695346E1B52824A00CA2B48 /* JSONModelClassProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONModelClassProperty.h; sourceTree = "<group>"; };
+		5695346F1B52824A00CA2B48 /* JSONModelClassProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONModelClassProperty.m; sourceTree = "<group>"; };
+		569534701B52824A00CA2B48 /* JSONModelError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONModelError.h; sourceTree = "<group>"; };
+		569534711B52824A00CA2B48 /* JSONModelError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONModelError.m; sourceTree = "<group>"; };
+		569534731B52824A00CA2B48 /* NSArray+JSONModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+JSONModel.h"; sourceTree = "<group>"; };
+		569534741B52824A00CA2B48 /* NSArray+JSONModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+JSONModel.m"; sourceTree = "<group>"; };
+		569534751B52824A00CA2B48 /* JSONModelLib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONModelLib.h; sourceTree = "<group>"; };
+		5695347E1B52824A00CA2B48 /* JSONKeyMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKeyMapper.h; sourceTree = "<group>"; };
+		5695347F1B52824A00CA2B48 /* JSONKeyMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKeyMapper.m; sourceTree = "<group>"; };
+		569534801B52824A00CA2B48 /* JSONValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONValueTransformer.h; sourceTree = "<group>"; };
+		569534811B52824A00CA2B48 /* JSONValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONValueTransformer.m; sourceTree = "<group>"; };
+		5695348F1B5283E900CA2B48 /* TestJsonModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestJsonModel.h; sourceTree = "<group>"; };
+		569534901B5283E900CA2B48 /* TestJsonModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestJsonModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,6 +234,7 @@
 		5695339B1B526EA100CA2B48 = {
 			isa = PBXGroup;
 			children = (
+				569534661B52824A00CA2B48 /* JSONModelManager */,
 				569533CD1B526F1800CA2B48 /* ProtobufManager */,
 				569533A61B526EA100CA2B48 /* Protobuf-v2.6.0 */,
 				569533C01B526EA100CA2B48 /* Protobuf-v2.6.0Tests */,
@@ -444,6 +473,56 @@
 			path = ProtobufFile;
 			sourceTree = "<group>";
 		};
+		569534661B52824A00CA2B48 /* JSONModelManager */ = {
+			isa = PBXGroup;
+			children = (
+				569534671B52824A00CA2B48 /* JSONModel */,
+				569534721B52824A00CA2B48 /* JSONModelCategories */,
+				569534751B52824A00CA2B48 /* JSONModelLib.h */,
+				5695347D1B52824A00CA2B48 /* JSONModelTransformations */,
+				5695348F1B5283E900CA2B48 /* TestJsonModel.h */,
+				569534901B5283E900CA2B48 /* TestJsonModel.m */,
+			);
+			path = JSONModelManager;
+			sourceTree = "<group>";
+		};
+		569534671B52824A00CA2B48 /* JSONModel */ = {
+			isa = PBXGroup;
+			children = (
+				569534681B52824A00CA2B48 /* JSONModel+CoreData.h */,
+				569534691B52824A00CA2B48 /* JSONModel+CoreData.m */,
+				5695346A1B52824A00CA2B48 /* JSONModel.h */,
+				5695346B1B52824A00CA2B48 /* JSONModel.m */,
+				5695346C1B52824A00CA2B48 /* JSONModelArray.h */,
+				5695346D1B52824A00CA2B48 /* JSONModelArray.m */,
+				5695346E1B52824A00CA2B48 /* JSONModelClassProperty.h */,
+				5695346F1B52824A00CA2B48 /* JSONModelClassProperty.m */,
+				569534701B52824A00CA2B48 /* JSONModelError.h */,
+				569534711B52824A00CA2B48 /* JSONModelError.m */,
+			);
+			path = JSONModel;
+			sourceTree = "<group>";
+		};
+		569534721B52824A00CA2B48 /* JSONModelCategories */ = {
+			isa = PBXGroup;
+			children = (
+				569534731B52824A00CA2B48 /* NSArray+JSONModel.h */,
+				569534741B52824A00CA2B48 /* NSArray+JSONModel.m */,
+			);
+			path = JSONModelCategories;
+			sourceTree = "<group>";
+		};
+		5695347D1B52824A00CA2B48 /* JSONModelTransformations */ = {
+			isa = PBXGroup;
+			children = (
+				5695347E1B52824A00CA2B48 /* JSONKeyMapper.h */,
+				5695347F1B52824A00CA2B48 /* JSONKeyMapper.m */,
+				569534801B52824A00CA2B48 /* JSONValueTransformer.h */,
+				569534811B52824A00CA2B48 /* JSONValueTransformer.m */,
+			);
+			path = JSONModelTransformations;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -545,20 +624,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				569534861B52824A00CA2B48 /* JSONModelError.m in Sources */,
 				569534531B526F1800CA2B48 /* once.cc in Sources */,
 				569534571B526F1800CA2B48 /* substitute.cc in Sources */,
 				569534381B526F1800CA2B48 /* OCMessageValue.mm in Sources */,
 				5695343A1B526F1800CA2B48 /* importer.cc in Sources */,
+				569534821B52824A00CA2B48 /* JSONModel+CoreData.m in Sources */,
+				569534841B52824A00CA2B48 /* JSONModelArray.m in Sources */,
 				569534401B526F1800CA2B48 /* extension_set.cc in Sources */,
 				5695344B1B526F1800CA2B48 /* message.cc in Sources */,
 				569534581B526F1800CA2B48 /* text_format.cc in Sources */,
 				569534541B526F1800CA2B48 /* stringprintf.cc in Sources */,
+				5695348C1B52824A00CA2B48 /* JSONValueTransformer.m in Sources */,
 				5695343B1B526F1800CA2B48 /* parser.cc in Sources */,
 				5695343D1B526F1800CA2B48 /* descriptor.pb.cc in Sources */,
 				569534561B526F1800CA2B48 /* strutil.cc in Sources */,
 				569534551B526F1800CA2B48 /* structurally_valid.cc in Sources */,
+				569534871B52824A00CA2B48 /* NSArray+JSONModel.m in Sources */,
 				569533B01B526EA100CA2B48 /* ViewController.m in Sources */,
 				569534461B526F1800CA2B48 /* strtod.cc in Sources */,
+				5695348B1B52824A00CA2B48 /* JSONKeyMapper.m in Sources */,
 				569534511B526F1800CA2B48 /* atomicops_internals_x86_msvc.cc in Sources */,
 				569534371B526F1800CA2B48 /* message_data.cc in Sources */,
 				5695343C1B526F1800CA2B48 /* descriptor.cc in Sources */,
@@ -568,6 +653,7 @@
 				569534411B526F1800CA2B48 /* extension_set_heavy.cc in Sources */,
 				5695343F1B526F1800CA2B48 /* dynamic_message.cc in Sources */,
 				5695344D1B526F1800CA2B48 /* reflection_ops.cc in Sources */,
+				569534831B52824A00CA2B48 /* JSONModel.m in Sources */,
 				569534521B526F1800CA2B48 /* common.cc in Sources */,
 				569534501B526F1800CA2B48 /* atomicops_internals_x86_gcc.cc in Sources */,
 				569534471B526F1800CA2B48 /* tokenizer.cc in Sources */,
@@ -579,9 +665,11 @@
 				5695343E1B526F1800CA2B48 /* descriptor_database.cc in Sources */,
 				569533AD1B526EA100CA2B48 /* AppDelegate.m in Sources */,
 				569534431B526F1800CA2B48 /* generated_message_util.cc in Sources */,
+				569534911B5283E900CA2B48 /* TestJsonModel.m in Sources */,
 				5695345A1B526F1800CA2B48 /* wire_format.cc in Sources */,
 				569534481B526F1800CA2B48 /* zero_copy_stream.cc in Sources */,
 				5695345C1B526F1800CA2B48 /* protobuf_manager.cc in Sources */,
+				569534851B52824A00CA2B48 /* JSONModelClassProperty.m in Sources */,
 				569534441B526F1800CA2B48 /* coded_stream.cc in Sources */,
 				569534611B52707C00CA2B48 /* test.pb.cc in Sources */,
 				569534391B526F1800CA2B48 /* OCProtobufMaganer.mm in Sources */,
@@ -794,6 +882,7 @@
 				569533C91B526EA100CA2B48 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		569533CA1B526EA100CA2B48 /* Build configuration list for PBXNativeTarget "Protobuf-v2.6.0Tests" */ = {
 			isa = XCConfigurationList;
@@ -802,6 +891,7 @@
 				569533CC1B526EA100CA2B48 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

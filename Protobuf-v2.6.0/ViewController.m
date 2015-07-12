@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "OCProtobufMaganer.h"
 #import "OCMessageValue.h"
+#import "TestJsonModel.h"
 
 @interface ViewController ()
 
@@ -31,7 +32,39 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)onJsonStartAction:(id)sender {
+    NSMutableDictionary *dictIn = [NSMutableDictionary dictionary];
+    [dictIn setObject:@"100" forKey:@"int32_value"];
+    [dictIn setObject:@"101" forKey:@"string_value"];
+    [dictIn setObject:@[@"sdasdadad", @"sdadadadadadadadad"] forKey:@"rpt_int32_value"];
+    [dictIn setObject:@[@"dsfafafa", @"fafafadadadadasd"] forKey:@"rpt_string_value"];
+    TestJsonModel *jsonModelIn = [[TestJsonModel alloc] initWithDictionary:dictIn error:nil];
     
+    NSString *jsonString = [jsonModelIn toJSONString];
+    
+    TestJsonModel *jsonModelOut = [[TestJsonModel alloc] initWithString:jsonString error:nil];
+    
+    NSDictionary *dictOut = [jsonModelOut toDictionary];
+    
+    NSLog(@"%@", dictOut);
+}
+
+- (IBAction)onProtoStaticStartAction:(id)sender {
+}
+
+- (IBAction)onProtoDynamicStartAction:(id)sender {
+}
+
+
+- (void) test
+{
     OCProtobufMaganer *protoMgr = [OCProtobufMaganer defaultProtobufMaganer];
     if (![protoMgr initializeWithRootPath:[[NSBundle mainBundle] bundlePath]]) {
         return;
@@ -54,20 +87,6 @@
     if (msgDictOut.count <= 0) {
         return;
     }
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-- (IBAction)onJsonStartAction:(id)sender {
-}
-
-- (IBAction)onProtoStaticStartAction:(id)sender {
-}
-
-- (IBAction)onProtoDynamicStartAction:(id)sender {
 }
 
 @end

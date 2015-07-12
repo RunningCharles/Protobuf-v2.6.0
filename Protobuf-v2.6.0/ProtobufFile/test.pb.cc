@@ -32,21 +32,23 @@ void protobuf_AssignDesc_test_2eproto() {
       "test.proto");
   GOOGLE_CHECK(file != NULL);
   test_descriptor_ = file->message_type(0);
-  static const int test_offsets_[2] = {
+  static const int test_offsets_[4] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(test, int32_value_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(test, string_value_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(test, rpt_int32_value_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(test, rpt_string_value_),
   };
   test_reflection_ =
-    new ::google::protobuf::internal::GeneratedMessageReflection(
+    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
       test_descriptor_,
       test::default_instance_,
       test_offsets_,
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(test, _has_bits_[0]),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(test, _unknown_fields_),
       -1,
-      ::google::protobuf::DescriptorPool::generated_pool(),
-      ::google::protobuf::MessageFactory::generated_factory(),
-      sizeof(test));
+      -1,
+      sizeof(test),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(test, _internal_metadata_),
+      -1);
 }
 
 namespace {
@@ -60,7 +62,7 @@ inline void protobuf_AssignDescriptorsOnce() {
 void protobuf_RegisterTypes(const ::std::string&) {
   protobuf_AssignDescriptorsOnce();
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-    test_descriptor_, &test::default_instance());
+      test_descriptor_, &test::default_instance());
 }
 
 }  // namespace
@@ -77,8 +79,9 @@ void protobuf_AddDesc_test_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-    "\n\ntest.proto\"1\n\004test\022\023\n\013int32_value\030\001 \001("
-    "\005\022\024\n\014string_value\030\002 \001(\t", 63);
+    "\n\ntest.proto\"d\n\004test\022\023\n\013int32_value\030\001 \001("
+    "\005\022\024\n\014string_value\030\002 \001(\t\022\027\n\017rpt_int32_val"
+    "ue\030\003 \003(\005\022\030\n\020rpt_string_value\030\004 \003(\t", 114);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "test.proto", &protobuf_RegisterTypes);
   test::default_instance_ = new test();
@@ -93,15 +96,27 @@ struct StaticDescriptorInitializer_test_2eproto {
   }
 } static_descriptor_initializer_test_2eproto_;
 
+namespace {
+
+static void MergeFromFail(int line) GOOGLE_ATTRIBUTE_COLD;
+static void MergeFromFail(int line) {
+  GOOGLE_CHECK(false) << __FILE__ << ":" << line;
+}
+
+}  // namespace
+
+
 // ===================================================================
 
 #ifndef _MSC_VER
 const int test::kInt32ValueFieldNumber;
 const int test::kStringValueFieldNumber;
+const int test::kRptInt32ValueFieldNumber;
+const int test::kRptStringValueFieldNumber;
 #endif  // !_MSC_VER
 
 test::test()
-  : ::google::protobuf::Message() {
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
   SharedCtor();
   // @@protoc_insertion_point(constructor:test)
 }
@@ -110,7 +125,8 @@ void test::InitAsDefaultInstance() {
 }
 
 test::test(const test& from)
-  : ::google::protobuf::Message() {
+  : ::google::protobuf::Message(),
+    _internal_metadata_(NULL) {
   SharedCtor();
   MergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:test)
@@ -120,7 +136,7 @@ void test::SharedCtor() {
   ::google::protobuf::internal::GetEmptyString();
   _cached_size_ = 0;
   int32_value_ = 0;
-  string_value_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  string_value_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -130,9 +146,7 @@ test::~test() {
 }
 
 void test::SharedDtor() {
-  if (string_value_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    delete string_value_;
-  }
+  string_value_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (this != default_instance_) {
   }
 }
@@ -154,21 +168,27 @@ const test& test::default_instance() {
 
 test* test::default_instance_ = NULL;
 
-test* test::New() const {
-  return new test;
+test* test::New(::google::protobuf::Arena* arena) const {
+  test* n = new test;
+  if (arena != NULL) {
+    arena->Own(n);
+  }
+  return n;
 }
 
 void test::Clear() {
-  if (_has_bits_[0 / 32] & 3) {
+  if (_has_bits_[0 / 32] & 3u) {
     int32_value_ = 0;
     if (has_string_value()) {
-      if (string_value_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-        string_value_->clear();
-      }
+      string_value_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
     }
   }
+  rpt_int32_value_.Clear();
+  rpt_string_value_.Clear();
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  mutable_unknown_fields()->Clear();
+  if (_internal_metadata_.have_unknown_fields()) {
+    mutable_unknown_fields()->Clear();
+  }
 }
 
 bool test::MergePartialFromCodedStream(
@@ -204,10 +224,48 @@ bool test::MergePartialFromCodedStream(
           ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
             this->string_value().data(), this->string_value().length(),
             ::google::protobuf::internal::WireFormat::PARSE,
-            "string_value");
+            "test.string_value");
         } else {
           goto handle_unusual;
         }
+        if (input->ExpectTag(24)) goto parse_rpt_int32_value;
+        break;
+      }
+
+      // repeated int32 rpt_int32_value = 3;
+      case 3: {
+        if (tag == 24) {
+         parse_rpt_int32_value:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadRepeatedPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 1, 24, input, this->mutable_rpt_int32_value())));
+        } else if (tag == 26) {
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPackedPrimitiveNoInline<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, this->mutable_rpt_int32_value())));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(24)) goto parse_rpt_int32_value;
+        if (input->ExpectTag(34)) goto parse_rpt_string_value;
+        break;
+      }
+
+      // repeated string rpt_string_value = 4;
+      case 4: {
+        if (tag == 34) {
+         parse_rpt_string_value:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->add_rpt_string_value()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->rpt_string_value(this->rpt_string_value_size() - 1).data(),
+            this->rpt_string_value(this->rpt_string_value_size() - 1).length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "test.rpt_string_value");
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(34)) goto parse_rpt_string_value;
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -247,12 +305,28 @@ void test::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->string_value().data(), this->string_value().length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "string_value");
+      "test.string_value");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
       2, this->string_value(), output);
   }
 
-  if (!unknown_fields().empty()) {
+  // repeated int32 rpt_int32_value = 3;
+  for (int i = 0; i < this->rpt_int32_value_size(); i++) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(
+      3, this->rpt_int32_value(i), output);
+  }
+
+  // repeated string rpt_string_value = 4;
+  for (int i = 0; i < this->rpt_string_value_size(); i++) {
+  ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+    this->rpt_string_value(i).data(), this->rpt_string_value(i).length(),
+    ::google::protobuf::internal::WireFormat::SERIALIZE,
+    "test.rpt_string_value");
+    ::google::protobuf::internal::WireFormatLite::WriteString(
+      4, this->rpt_string_value(i), output);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
@@ -272,13 +346,29 @@ void test::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->string_value().data(), this->string_value().length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "string_value");
+      "test.string_value");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
         2, this->string_value(), target);
   }
 
-  if (!unknown_fields().empty()) {
+  // repeated int32 rpt_int32_value = 3;
+  for (int i = 0; i < this->rpt_int32_value_size(); i++) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteInt32ToArray(3, this->rpt_int32_value(i), target);
+  }
+
+  // repeated string rpt_string_value = 4;
+  for (int i = 0; i < this->rpt_string_value_size(); i++) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->rpt_string_value(i).data(), this->rpt_string_value(i).length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "test.rpt_string_value");
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteStringToArray(4, this->rpt_string_value(i), target);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -289,7 +379,7 @@ void test::SerializeWithCachedSizes(
 int test::ByteSize() const {
   int total_size = 0;
 
-  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+  if (_has_bits_[0 / 32] & 3u) {
     // optional int32 int32_value = 1;
     if (has_int32_value()) {
       total_size += 1 +
@@ -305,7 +395,24 @@ int test::ByteSize() const {
     }
 
   }
-  if (!unknown_fields().empty()) {
+  // repeated int32 rpt_int32_value = 3;
+  {
+    int data_size = 0;
+    for (int i = 0; i < this->rpt_int32_value_size(); i++) {
+      data_size += ::google::protobuf::internal::WireFormatLite::
+        Int32Size(this->rpt_int32_value(i));
+    }
+    total_size += 1 * this->rpt_int32_value_size() + data_size;
+  }
+
+  // repeated string rpt_string_value = 4;
+  total_size += 1 * this->rpt_string_value_size();
+  for (int i = 0; i < this->rpt_string_value_size(); i++) {
+    total_size += ::google::protobuf::internal::WireFormatLite::StringSize(
+      this->rpt_string_value(i));
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
@@ -317,10 +424,10 @@ int test::ByteSize() const {
 }
 
 void test::MergeFrom(const ::google::protobuf::Message& from) {
-  GOOGLE_CHECK_NE(&from, this);
-  const test* source =
-    ::google::protobuf::internal::dynamic_cast_if_available<const test*>(
-      &from);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  const test* source = 
+      ::google::protobuf::internal::DynamicCastToGenerated<const test>(
+          &from);
   if (source == NULL) {
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
@@ -329,16 +436,21 @@ void test::MergeFrom(const ::google::protobuf::Message& from) {
 }
 
 void test::MergeFrom(const test& from) {
-  GOOGLE_CHECK_NE(&from, this);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  rpt_int32_value_.MergeFrom(from.rpt_int32_value_);
+  rpt_string_value_.MergeFrom(from.rpt_string_value_);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_int32_value()) {
       set_int32_value(from.int32_value());
     }
     if (from.has_string_value()) {
-      set_string_value(from.string_value());
+      set_has_string_value();
+      string_value_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.string_value_);
     }
   }
-  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+  if (from._internal_metadata_.have_unknown_fields()) {
+    mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+  }
 }
 
 void test::CopyFrom(const ::google::protobuf::Message& from) {
@@ -359,13 +471,17 @@ bool test::IsInitialized() const {
 }
 
 void test::Swap(test* other) {
-  if (other != this) {
-    std::swap(int32_value_, other->int32_value_);
-    std::swap(string_value_, other->string_value_);
-    std::swap(_has_bits_[0], other->_has_bits_[0]);
-    _unknown_fields_.Swap(&other->_unknown_fields_);
-    std::swap(_cached_size_, other->_cached_size_);
-  }
+  if (other == this) return;
+  InternalSwap(other);
+}
+void test::InternalSwap(test* other) {
+  std::swap(int32_value_, other->int32_value_);
+  string_value_.Swap(&other->string_value_);
+  rpt_int32_value_.UnsafeArenaSwap(&other->rpt_int32_value_);
+  rpt_string_value_.UnsafeArenaSwap(&other->rpt_string_value_);
+  std::swap(_has_bits_[0], other->_has_bits_[0]);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  std::swap(_cached_size_, other->_cached_size_);
 }
 
 ::google::protobuf::Metadata test::GetMetadata() const {
@@ -376,6 +492,171 @@ void test::Swap(test* other) {
   return metadata;
 }
 
+#if PROTOBUF_INLINE_NOT_IN_HEADERS
+// test
+
+// optional int32 int32_value = 1;
+bool test::has_int32_value() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+void test::set_has_int32_value() {
+  _has_bits_[0] |= 0x00000001u;
+}
+void test::clear_has_int32_value() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+void test::clear_int32_value() {
+  int32_value_ = 0;
+  clear_has_int32_value();
+}
+ ::google::protobuf::int32 test::int32_value() const {
+  // @@protoc_insertion_point(field_get:test.int32_value)
+  return int32_value_;
+}
+ void test::set_int32_value(::google::protobuf::int32 value) {
+  set_has_int32_value();
+  int32_value_ = value;
+  // @@protoc_insertion_point(field_set:test.int32_value)
+}
+
+// optional string string_value = 2;
+bool test::has_string_value() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+void test::set_has_string_value() {
+  _has_bits_[0] |= 0x00000002u;
+}
+void test::clear_has_string_value() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+void test::clear_string_value() {
+  string_value_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  clear_has_string_value();
+}
+ const ::std::string& test::string_value() const {
+  // @@protoc_insertion_point(field_get:test.string_value)
+  return string_value_.GetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+ void test::set_string_value(const ::std::string& value) {
+  set_has_string_value();
+  string_value_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:test.string_value)
+}
+ void test::set_string_value(const char* value) {
+  set_has_string_value();
+  string_value_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:test.string_value)
+}
+ void test::set_string_value(const char* value, size_t size) {
+  set_has_string_value();
+  string_value_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:test.string_value)
+}
+ ::std::string* test::mutable_string_value() {
+  set_has_string_value();
+  // @@protoc_insertion_point(field_mutable:test.string_value)
+  return string_value_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+ ::std::string* test::release_string_value() {
+  clear_has_string_value();
+  return string_value_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+ void test::set_allocated_string_value(::std::string* string_value) {
+  if (string_value != NULL) {
+    set_has_string_value();
+  } else {
+    clear_has_string_value();
+  }
+  string_value_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), string_value);
+  // @@protoc_insertion_point(field_set_allocated:test.string_value)
+}
+
+// repeated int32 rpt_int32_value = 3;
+int test::rpt_int32_value_size() const {
+  return rpt_int32_value_.size();
+}
+void test::clear_rpt_int32_value() {
+  rpt_int32_value_.Clear();
+}
+ ::google::protobuf::int32 test::rpt_int32_value(int index) const {
+  // @@protoc_insertion_point(field_get:test.rpt_int32_value)
+  return rpt_int32_value_.Get(index);
+}
+ void test::set_rpt_int32_value(int index, ::google::protobuf::int32 value) {
+  rpt_int32_value_.Set(index, value);
+  // @@protoc_insertion_point(field_set:test.rpt_int32_value)
+}
+ void test::add_rpt_int32_value(::google::protobuf::int32 value) {
+  rpt_int32_value_.Add(value);
+  // @@protoc_insertion_point(field_add:test.rpt_int32_value)
+}
+ const ::google::protobuf::RepeatedField< ::google::protobuf::int32 >&
+test::rpt_int32_value() const {
+  // @@protoc_insertion_point(field_list:test.rpt_int32_value)
+  return rpt_int32_value_;
+}
+ ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
+test::mutable_rpt_int32_value() {
+  // @@protoc_insertion_point(field_mutable_list:test.rpt_int32_value)
+  return &rpt_int32_value_;
+}
+
+// repeated string rpt_string_value = 4;
+int test::rpt_string_value_size() const {
+  return rpt_string_value_.size();
+}
+void test::clear_rpt_string_value() {
+  rpt_string_value_.Clear();
+}
+ const ::std::string& test::rpt_string_value(int index) const {
+  // @@protoc_insertion_point(field_get:test.rpt_string_value)
+  return rpt_string_value_.Get(index);
+}
+ ::std::string* test::mutable_rpt_string_value(int index) {
+  // @@protoc_insertion_point(field_mutable:test.rpt_string_value)
+  return rpt_string_value_.Mutable(index);
+}
+ void test::set_rpt_string_value(int index, const ::std::string& value) {
+  // @@protoc_insertion_point(field_set:test.rpt_string_value)
+  rpt_string_value_.Mutable(index)->assign(value);
+}
+ void test::set_rpt_string_value(int index, const char* value) {
+  rpt_string_value_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set_char:test.rpt_string_value)
+}
+ void test::set_rpt_string_value(int index, const char* value, size_t size) {
+  rpt_string_value_.Mutable(index)->assign(
+    reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:test.rpt_string_value)
+}
+ ::std::string* test::add_rpt_string_value() {
+  return rpt_string_value_.Add();
+}
+ void test::add_rpt_string_value(const ::std::string& value) {
+  rpt_string_value_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add:test.rpt_string_value)
+}
+ void test::add_rpt_string_value(const char* value) {
+  rpt_string_value_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add_char:test.rpt_string_value)
+}
+ void test::add_rpt_string_value(const char* value, size_t size) {
+  rpt_string_value_.Add()->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_add_pointer:test.rpt_string_value)
+}
+ const ::google::protobuf::RepeatedPtrField< ::std::string>&
+test::rpt_string_value() const {
+  // @@protoc_insertion_point(field_list:test.rpt_string_value)
+  return rpt_string_value_;
+}
+ ::google::protobuf::RepeatedPtrField< ::std::string>*
+test::mutable_rpt_string_value() {
+  // @@protoc_insertion_point(field_mutable_list:test.rpt_string_value)
+  return &rpt_string_value_;
+}
+
+#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // @@protoc_insertion_point(namespace_scope)
 

@@ -1,5 +1,7 @@
 message test
 {
-  optional   int32    int32_value    = 1;
-  optional   string   string_value   = 2;
+  optional   int32    int32_value      = 1;
+  optional   string   string_value     = 2;
+  repeated   int32    rpt_int32_value  = 3;
+  repeated   string   rpt_string_value = 4;
 }
